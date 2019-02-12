@@ -18,7 +18,7 @@
             "image": "apazga/react-multi-worker",
             "hostname": "worker",
             "essential": false
-        }
+        },
         {
             "name": "nginx",
             "image": "apazga/react-multi-nginx",
