@@ -20,3 +20,16 @@ after_success:
   - docker push apazga/react-multi-nginx
   - docker push apazga/react-multi-server
   - docker push apazga/react-multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: react-multi-docker
+  env: ReactMultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-2-159664229896
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
